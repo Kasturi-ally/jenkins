@@ -1,10 +1,11 @@
-# Use the official Nginx image from Docker Hub
-FROM nginx
+# Use a lightweight base image
+FROM httpd:2.4.53-alpine
 
+# Create a simple index.html file to display "Hello world!"
+RUN echo "Hello world!" > /var/www/html/index.html
 
-
-# Expose port 80 to allow outside access to Nginx server
+# Expose port 80 for web traffic
 EXPOSE 80
 
-# By default, run Nginx in the foreground when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+# Run httpd in the foreground
+CMD ["httpd", "-D", "FOREGROUND"]
