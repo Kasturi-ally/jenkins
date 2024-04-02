@@ -5,7 +5,7 @@ FROM httpd:2.4.53-alpine
 RUN mkdir -p /var/www/html
 
 # Create a simple index.html file to display "Hello world!"
-RUN echo "Hello world!" > /var/www/html/index.html
+RUN echo "Hello world" > /var/www/html/index.html
 
 # Expose port 80 for web traffic
 EXPOSE 80
